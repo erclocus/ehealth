@@ -27,7 +27,12 @@ class CreateDoctorprofilesTable extends Migration
 
             $table->string('name');
             $table->text('experience');
-            $table->string('Specification');
+
+            $table->integer('specification_id')->unsigned();
+            $table->foreign('specification_id')
+                ->references('id')->on('specifications')
+                ->onDelete('cascade');
+
             $table->string('Education');
             $table->integer('Cost');
 

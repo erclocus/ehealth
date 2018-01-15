@@ -11,21 +11,18 @@
 |
 */
 
-use App\Doctorprofile;
-
 Route::get('/', function () {
-    return view('welcome');
+    return view('user.index');
 });
 
-<<<<<<< HEAD
-Route::get('location/specification', function(){
 
-    $user = Doctorprofile::find(1);
-return $user;
+Route::get('{location}/{specification}', [
+    'uses' => 'DoctorController@getDoctorList'
+//    'as'=>'doctor.list'
+]);
 
-});
-=======
-Route::get('/users', function () {
-    return view('welcome');
-});
->>>>>>> 7ff814b79ea622d824b6fb75a7de58f99c0a5ed7
+
+Route::get('doctors', 'DoctorController@getDoctorsList')->name('doctor.list');
+
+
+

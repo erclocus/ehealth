@@ -11,8 +11,8 @@
 
 @foreach($doctors as $doctor)
                         <div class="panel-heading">
-    {{$doctor->name}}
-                        <button type="button" class="btn btn-primary">Book Appointment</button>
+                    <a href="/doctor/{{$doctor->id}}/{{$doctor->name}}" > {{$doctor->name}} </a>
+                        <button type="button" id="bookapooint{{$doctor->id}}" class="btn btn-primary">Book Appointment</button>
                         </div>
     @endforeach
 

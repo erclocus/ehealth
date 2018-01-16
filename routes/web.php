@@ -16,13 +16,15 @@ Route::get('/', function () {
 });
 
 
-Route::get('{location}/{specification}', [
-    'uses' => 'DoctorController@getDoctorList'
-//    'as'=>'doctor.list'
-]);
+//Route::get('{location}/{specification}', [
+//    'uses' => 'DoctorController@getDoctorList'
+////    'as'=>'doctor.list'
+//]);
 
 
 Route::get('doctors', 'DoctorController@getDoctorsList')->name('doctor.list');
 
 
+
+Route::get('doctor/{id}/{doctorname}','DoctorController@DoctorInfo')->name('doctor.info');
 
